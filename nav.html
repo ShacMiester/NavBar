@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="nav.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-light static-top ml-auto" style="height: fit-content">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img class="CACIPLogo" src="../../assets/Updated Logo.png" alt="" />
+                </a>
+                <button class="navbar-toggler" (click)="toggleCollapsed()" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+                <div class="collapse navbar-collapse" [ngClass]="{ collapse: collapsed, 'navbar-collapse': true }" id="navbarResponsive">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a href="#" class="nav-link" data-toggle="dropdown" [routerLink]="['/aboutus']">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="dropdown" [routerLink]="['/topics']">Topics</a>
+                        </li>
+                        <li class="nav-item">
+                            <div class="dropdown">
+                                <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">Resources</a>
+
+                                <div class="dropdown-menu">
+                                    <a href="https://geonode.centralasiaclimateportal.org/knowledgehub/documents/?limit=20&offset=0&doc_type__in=publications" class="dropdown-item">Publications</a>
+                                    <a href="https://geonode.centralasiaclimateportal.org/knowledgehub/documents/?limit=20&offset=0&doc_type__in=datasets" class="dropdown-item">DataSets</a>
+                                    <a href="https://geonode.centralasiaclimateportal.org/maps/?limit=20&offset=0" class="dropdown-item">Maps</a>
+                                    <a href="https://geonode.centralasiaclimateportal.org/layers/?limit=20&offset=0" class="dropdown-item">Layers</a>
+                                    <a href="https://geonode.centralasiaclimateportal.org/knowledgehub/documents/?limit=20&offset=0&doc_type__in=webinars" class="dropdown-item">Webinars</a>
+                                    <a href="#" class="dropdown-item">E-Learning</a>
+                                    <a href="#" class="dropdown-item">Glossary</a>
+                                    <a href="https://geonode.centralasiaclimateportal.org/events/?limit=20&offset=0" class="dropdown-item">Events</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <div class="dropdown">
+                                <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">Media</a>
+
+                                <div class="dropdown-menu">
+                                    <a href="https://geonode.centralasiaclimateportal.org/news/?limit=20&offset=0" class="dropdown-item">News</a>
+                                    <a href="#" class="dropdown-item">Experties</a>
+                                    <a href="#" class="dropdown-item">Videos</a>
+                                    <a href="#" class="dropdown-item">Photos</a>
+                                    <a href="https://centralasiaclimateportal.org/media/surveys" class="dropdown-item">Surveys</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="dropdown">Tools</a>
+                        </li>
+                    </ul>
+                </div>
+                <div style="display: flex">
+                    <div class="" id="navIconContainer" style="display: flex">
+                        <div class="navIcons">
+                            <button [mdePopoverTriggerFor]="appPopover" mdePopoverTriggerOn="click" #popoverTrigger="mdePopoverTrigger" style="background-color: transparent; border: none">
+                              <i class="fa">
+                                <img src="assets/search-3-xxl.png" width="30px" alt="" /></i>
+                  </button>
+                            <span>Search</span>
+                        </div>
+                        <div class="navIcons" style="margin-left: 10px">
+                            <i class="fa">
+                    <img src="../../assets/help.png" width="32px" alt="" /></i>
+                            <span>Help</span>
+                        </div>
+                        <div class="navIcons">
+                            <div class="dropdown">
+                                <i class="fa" style="
+                      padding: 0.02em 0.39em;
+                      font-size: 28px;
+                      padding: 0.1em 0.6em;
+                      font-size: 28px;
+                      padding: 0.01em 0.42em;
+                    ">
+                      <img src="assets/en.svg" width="20px" height="20px" alt=""
+                        style="border: solid #1f5763; border-radius: 60%" />
+                      <figcaption style="font-size: 16px">
+                        en
+                      </figcaption>
+                    </i>
+                                <div class="dropdown-menu">
+                                    <button class="dropdown-item" (click)="test('en')">
+                        <span class="languageFlag">
+                          <img src="../../assets/en.svg" width="20px" /></span>
+                        en
+                      </button>
+                                    <button class="dropdown-item" (click)="test('ru')">
+                        <span class="languageFlag">
+                          <img src="../../assets/ru.svg" width="20px" /></span>ru
+                      </button>
+                                    <button class="dropdown-item" (click)="test('uz')">
+                        <span class="languageFlag">
+                          <img src="../../assets/uz.svg" width="20px" /></span>uz
+                      </button>
+                                    <button class="dropdown-item" (click)="test('kk')">
+                        <span class="languageFlag">
+                          <img src="../../assets/kk.svg" width="20px" /></span>kk
+                      </button>
+                                    <button class="dropdown-item" (click)="test('tk')">
+                        <span class="languageFlag">
+                          <img src="../../assets/tk.svg" width="20px" /></span>tk
+                      </button>
+                                    <button class="dropdown-item" (click)="test('tg')">
+                        <span class="languageFlag">
+                          <img src="../../assets/tg.svg" width="20px" /></span>
+                        tg
+                      </button>
+                                    <button class="dropdown-item" (click)="test('ky')">
+                        <span class="languageFlag">
+                          <img src="../../assets/ky.svg" width="20px" /></span>
+                        ky
+                      </button>
+                                </div>
+                            </div>
+
+                            <span>Language</span>
+                        </div>
+                    </div>
+
+                    <div id="navButtonsContainer">
+                        <button class="navButtons" (click)="login()">
+                 Log in
+                </button>
+                        <button class="navButtons" (click)="register()">
+                 Register
+                </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+</body>
+
+</html>
